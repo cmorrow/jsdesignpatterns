@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/app.css">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="css/xcode.css" id="highlight-theme">
+</head>
+
+<body>
+  <!-- Add your site or application content here -->
+  <div id="contentWrapper" class="cf">
+    <h1>PubSub Pattern: Decoupled Modules</h1>
+    <p class="info">https://github.com/mroderick/PubSubJS</p>
+    <div class="status-bar">
+      Status bar messages: <span class="msg top"></span>
+      <div class="msg empty hide">There are currently no todo items!!</div>
+    </div>
+    <h2>TODO List</h2>
+    <input type="text" id="addTodoInput"><button id="addTodoButton">+ Add</button>
+    <ul id="todoList"></ul>
+
+    <div class="nav cf">
+      <a class="btn left" href="bad-code.html">&lt; Spaghetti Code</a>
+    </div>
+    
+  </div>
+  
+
+  <script src="js/vendor/jquery-2.1.4.min.js"></script>
+  <script src="js/vendor/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <!-- My Modules -->
+  <script src="js/vendor/pubsub.js"></script>
+  <script src="js/vendor/jquery.pubsub.js"></script>
+  <script src="js/pubsub-todo-list.js"></script>
+  <script src="js/pubsub-status-bar.js"></script>
+</body>
+
+</html>

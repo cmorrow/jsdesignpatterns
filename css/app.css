@@ -1,0 +1,152 @@
+body { 
+  font-family:Arial;
+  background: #000;
+}
+
+h1 { margin-top:0; }
+#moduleName {
+  color: red;
+}
+
+pre {
+  font-size:1.6em;
+}
+
+pre.small {
+  font-size: 1.4em;
+}
+
+input {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+}
+
+.nav {
+  margin-top: 15px;
+}
+
+.left { float:left; }
+.right { float:right; }
+
+.btn, button {
+  display: inline-block;
+  box-sizing: border-box;
+  color:#fff;
+  padding: 3px 10px;
+  background-color: #333;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 1.4em;
+}
+
+/* Grid */
+.col6 {
+  float:left;
+  box-sizing: border-box;
+  width:50%;
+  padding-left: 10px;
+}
+
+.col8 {
+  float:left;
+  box-sizing: border-box;
+  width: 60%;
+  padding-left: 10px;
+}
+.col4 {
+  float:left;
+  box-sizing: border-box;
+  width: 40%;
+  padding-left: 10px;
+}
+
+.col4:first-child, .col6:first-child, .col8:first-child {
+  padding-left:0;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+
+.cf:after {
+    clear: both;
+}
+.hide { display:none; }
+button { background: green; color:#fff; border:none; }
+
+#contentWrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.col6:first-child {
+  border-right: solid 1px #ccc;
+}
+
+
+.status-bar {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #bada55;
+  font-size: 1.6em;
+}
+
+.info {
+  color: #999;
+}
+
+/* Status bar */
+.status-bar .msg {
+  color: green;
+}
+.status-bar .msg.removed {
+  color: red;
+}
+
+.status-bar .msg.empty {
+  margin-top: 5px;
+  padding: 3px;
+  background-color: yellow;
+  color:#000;
+}
+
+
+
+#todoList {
+  list-style:none;
+  margin-left:0; padding-left:0;
+}
+#todoList li {
+  position:relative;
+  padding: 5px 5px 5px 15px;
+  background: #ececec;
+  margin-bottom: 2px;
+}
+#todoList li:before {
+  display:block;
+  content: ' ';
+  position:absolute;
+  left:0; top:0; bottom:0; height:100%;
+  width: 5px;
+  background: #bada55;
+}
+
+#todoList .remove {
+  float:right;
+  text-decoration: none;
+  color: red;
+  padding: 1px 5px;
+  background: rgba(255,255,255,.6);
+  border: solid 1px red;
+  margin-top: -2px;
+}
+
+#todoList .remove:hover {
+  background: rgba(255,255,255,1);
+}

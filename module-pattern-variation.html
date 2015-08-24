@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/app.css">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="css/xcode.css" id="highlight-theme">
+</head>
+
+<body>
+  <!-- Add your site or application content here -->
+  <div id="contentWrapper" class="cf">
+    <h1>Module Pattern: Variation</h1>
+    <div class="cf">
+      <div class="col6"><h3>Code</h3>
+        <pre class="small"><code class="js">var someModule = (function ($) {
+  var module = {};
+
+  // Private
+  var id = 1, moduleName = "someModule";
+
+  // Public
+  module.publicProperty = 'SomeValue';
+  module.getName = function(){
+    this.moduleName = newName;
+  };
+  module.setName = function(nameValue){
+    this.moduleName = nameValue;
+    $('#moduleName').text(nameValue);
+  };
+  module.updateName = function(){
+    module.setName($('#nameInput').val());
+  };
+  module.init = function(){
+    module.setName(moduleName);
+    $('#updateName').on('click', function(){
+        module.setName($('#nameInput').val());
+    });
+  }
+
+  // set module name
+  module.init();
+
+  return module;
+})(jQuery);
+    </code></pre>
+      </div>
+      <div class="col6">
+        <h3>Demo</h3>
+        <h2>Module Name: <span id="moduleName"></span></h2>
+        
+        <input id="nameInput" type="text">
+        <button id="updateName">Update Module Name</button>
+      </div>
+    </div>
+    <div class="nav cf">
+      <a class="btn left" href="module-pattern.html">&lt; Module Pattern</a>
+      <a class="btn right" href="revealing-module-pattern.html">Next &gt;</a>
+    </div>
+    
+  </div>
+  
+
+  <script src="js/vendor/jquery-2.1.4.min.js"></script>
+  <script src="js/vendor/highlight.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="js/module-pattern-variation.js"></script>
+</body>
+
+</html>
