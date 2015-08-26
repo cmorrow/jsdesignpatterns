@@ -1,5 +1,5 @@
 var todoApp = todoApp || {};
-todoApp.todoList = (function($, undefined){
+todoApp.todoList = (function($, PubSub, undefined){
     var module = {}, app = todoApp;
     var $list = $('#todoList');
 
@@ -7,7 +7,7 @@ todoApp.todoList = (function($, undefined){
     var removeTodo = function($todoLi){
         var todoName = $todoLi.find('.title').text();
         $todoLi.remove();
-        PubSub.publish( 'todoRemoved', todoName );
+        PubSub.publish( 'todo.removed', todoName );
         if($list.find('li').length === 0){
             PubSub.publish( 'todo.empty', '' );
         }
@@ -49,4 +49,4 @@ todoApp.todoList = (function($, undefined){
 
     return module;
 
-})(jQuery);
+})(jQuery, PubSub);

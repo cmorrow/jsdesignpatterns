@@ -1,6 +1,6 @@
-var todoApp = todoApp || {};
+var todoApp = todoApp || {}; // if app exists use it; else create app object
 
-todoApp.statusBar = (function($, undefined){
+todoApp.statusBar = (function($, PubSub, undefined){ // alias jQuery with '$'; add PubSub reference
     var module = {}, app = todoApp;
     $statusBar = $('#contentWrapper').find('.status-bar');
 
@@ -35,4 +35,4 @@ todoApp.statusBar = (function($, undefined){
 
     return module;
 
-})(jQuery);
+})(jQuery, PubSub); // add jQuery, and PubSub for module
