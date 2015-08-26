@@ -1,6 +1,8 @@
+// bad code: jQuery may not reference '$'
 $(document).ready(function(){
 
     // begin spaghetti code
+    // bad code: there are no functions declared for use from any other part of the app
     $('#addTodoButton').on('click', function(){
         var $input = $('#addTodoInput');
         var inputValue = $input.val().trim();
@@ -24,6 +26,8 @@ $(document).ready(function(){
     });
 
     $('#todoList li .update').on('click', function(){
+        // bad code:  vs creating multiple jQuery objects
+        // good code: cache $(this); var $this = $(this);
         $(this).closest('li').find('input').addClass('hide');
         $(this).closest('li').find('.title, .remove').removeClass('hide');
     });
