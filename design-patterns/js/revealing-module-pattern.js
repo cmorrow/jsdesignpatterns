@@ -19,7 +19,7 @@ var revealingModule = (function ($) {
 
   function init(){
     $nameEl.text(nameModule);
-    $updateNameButton.on('click', function(){
+    $updateButton.on('click', function(){
       updateName($('#nameInput').val());
     });
   }
