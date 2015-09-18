@@ -1,26 +1,26 @@
 var revealingModule = (function ($) {
   var id = 1;
   var nameModule = "someModule";
+  var $nameEl = $('#moduleName');
+  var $updateButton = $('#updateName');
 
   function publicSetName(newName){
-    nameModule = newName;
+    updateName(newName)
   }
 
   function publicGetName(newName){
     return nameModule;
   }
 
-  function updateName(){
-    // set private variable
-    nameModule = $('#nameInput').val();
-    // update DOM element
-    $('#moduleName').text(nameModule);
+  function updateName(newName){ // private method
+    nameModule = newName; // set private variable
+    $nameEl.text(newName);
   }
 
   function init(){
-    $('#moduleName').text(nameModule);
-    $('#updateName').on('click', function(){
-      updateName();
+    $nameEl.text(nameModule);
+    $updateNameButton.on('click', function(){
+      updateName($('#nameInput').val());
     });
   }
 
@@ -28,8 +28,7 @@ var revealingModule = (function ($) {
 
   return {
     setName: publicSetName,
-    getName: publicGetName,
-    updateName: updateName
+    getName: publicGetName
   };
 })(jQuery);
 
